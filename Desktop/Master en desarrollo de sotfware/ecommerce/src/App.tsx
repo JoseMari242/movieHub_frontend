@@ -1,16 +1,23 @@
 
 import './App.css'
-import Home from './Pages/Home/home'
 import Login from './Pages/Log in'
 
+
+
 function App() {
-  
+ 
 
   return (
     <>
+
+
     <div className="login">
-    <Login />
+    <Login onLoginSuccess={function (): void {
+          throw new Error('Function not implemented.')
+        } } />
     </div>
+
+
     </>
   )
 }
