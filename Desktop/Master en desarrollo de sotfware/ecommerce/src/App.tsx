@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import './App.css';
 import Login from './Pages/Log in';
+import Header from './Components/Header';
+import { UserProvider } from './Context/Users';
+import AppRouter from './Router';
+
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLoginSuccess = () => {
-    setIsLoggedIn(true);
-  };
+  
 
   return (
     <div className="App">
       <div className="login">
-        <Login onLoginSuccess={handleLoginSuccess} />
+        <UserProvider>
+          
+        <AppRouter/>
+
+          </UserProvider>
       </div>
     </div>
   );
