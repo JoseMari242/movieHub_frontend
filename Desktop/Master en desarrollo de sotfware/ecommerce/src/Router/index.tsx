@@ -22,7 +22,7 @@ export default function AppRouter({}: Props) {
     <Route path='/' element={<Login onLoginSuccess={() => handleLoginSuccess()} />} />
 
 
-<Route path="/home" element={<Home />} />
+    <Route path="/home" element={<Home />} />
    
     </Routes>
     </BrowserRouter>
