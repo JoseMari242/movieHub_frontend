@@ -54,6 +54,7 @@ export default function Home() {
 
 import React, { useEffect, useState } from 'react';
 import { Products } from '../../Interfaces/products';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [productData, setProductData] = useState<Products[]>([]);
@@ -76,13 +77,15 @@ export default function Home() {
     <>
       <div>
         {productData.map((product) => {
-          // Aquí puedes renderizar cada producto
+          
           return (
             <div key={product.id}>
+               <Link to={`/product/${product.id}`}>
               <h2>{product.Name}</h2>
               <p>{product.description}</p>
+              <p>Precio: {product.price}</p>
               <img src={product.image} alt={product.Name} />
-              {/* Renderiza más detalles del producto según sea necesario */}
+              </Link>
             </div>
           );
         })}

@@ -118,7 +118,7 @@ type Props = {
   onLoginSuccess: () => void;
 };
 
-/*async function getApi() {
+async function getApi() {
   try {
     const data = await fetch('src/assets/Data/users.json');
     const JSONdata: User[] = await data.json();
@@ -126,9 +126,9 @@ type Props = {
   } catch (error) {
     throw new Error('Error fetching user data');
   }
-}*/
+}
 
-async function getApi() {    
+/*async function getApi() {    
   try {
     const response = await fetch('src/assets/Data/users.json');
     if (!response.ok) {
@@ -139,7 +139,7 @@ async function getApi() {
   } catch (error) {
     throw new Error('Error fetching user data: ' + error.message);
   }
-}
+}*/
 
 
 async function loginUser(email: string, password: string, users: User[], onLoginSuccess: () => void, navigate: any) {

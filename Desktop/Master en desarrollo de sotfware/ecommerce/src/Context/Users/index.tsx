@@ -14,21 +14,14 @@ export const UserProvider = ({children}) => {
     )
   }*/
 
-  import React, { createContext, useState, useEffect } from "react";
+  /*import React, { createContext, useState, useEffect } from "react";
+import { Users } from "../../Interfaces/users";
 
-  export type UserData = {
-    id: string;
-    Name: string;
-    email: string;
-    password: string;
-    cart: any[];
-    wishlist: any[];
-  };
-  
-  export const UserContext = createContext<UserData[]>([]);
+
+  export const UserContext = createContext<Users[]>([]);
   
   export const UserProvider = ({ children }) => {
-    const [users, setUsers] = useState<UserData[]>([]);
+    const [users, setUsers] = useState<Users[]>([]);
   
     useEffect(() => {
       fetchUsers();
@@ -40,9 +33,9 @@ export const UserProvider = ({children}) => {
         if (!response.ok) {
           throw new Error('Failed to fetch user data');
         }
-        const data: UserData[] = await response.json();
+        const data: Users[] = await response.json();
         setUsers(data);
-      } catch (error) {
+      } catch (error: ) {
         console.error('Error fetching user data:', error.message);
       }
     }
@@ -52,5 +45,5 @@ export const UserProvider = ({children}) => {
         {children}
       </UserContext.Provider>
     );
-  };
+  };*/
   
