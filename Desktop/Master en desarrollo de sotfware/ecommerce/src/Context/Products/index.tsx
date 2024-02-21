@@ -1,12 +1,14 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { ReactNode, createContext, useEffect, useState } from 'react'
 import { Products } from '../../Interfaces/products'
 
 
-
+interface ProductProviderProps {
+  children: ReactNode;
+}
 
 export const productContext = createContext<Products[]>([]);
 
-export const ProductProvider = ({children}) => {
+export const ProductProvider = ({children}: ProductProviderProps) => {
   const [products, setProducts] =  useState<Products[]>([]);
 
 

@@ -1,49 +1,62 @@
-/*import { createContext } from "react";
-
-export const UserNameContext = createContext(null);
-const userData = {
-    name: "Pepe",
-    email: "pepe@example.com"
-  }
-
-export const UserProvider = ({children}) => {
-    return (
-      <UserNameContext.Provider value={userData.name}>
-        {children}
-      </UserNameContext.Provider>
-    )
-  }*/
-
-  /*import React, { createContext, useState, useEffect } from "react";
+/*import React, { createContext, useState, useContext } from "react";
 import { Users } from "../../Interfaces/users";
 
+export interface UserContextType {
+  users: Users[];
+  setUsers: Function;
+}
 
-  export const UserContext = createContext<Users[]>([]);
+export const userContext = createContext({} as UserContextType);
+
+export const UserProvider = ({ children }) => {
+  const [users, setUsers] = useState<Users[]>([]);
   
-  export const UserProvider = ({ children }) => {
-    const [users, setUsers] = useState<Users[]>([]);
+  return (
+    <userContext.Provider value={{ users, setUsers }}>
+      {children}
+    </userContext.Provider>
+  );
+};
+
+export function useUsersContext() {
+  const context = useContext(userContext);
+  if (!context) {
+    throw new Error("Error");
+  }
+  return context;
+}*/
+
+import React, { createContext, useState, useContext } from "react";
+import { Users } from "../../Interfaces/users";
+
+export interface UserContextType {
+  users: Users[];
+  setUsers: Function;
+}
+
+export const userContext = createContext({} as UserContextType);
+
+export const UserProvider: React.FC<{ usersData: Users[] }> = ({ children, usersData }) => {
+  const [users, setUsers] = useState<Users[]>(usersData); // Inicializa el estado con los datos de los usuarios
+
+  return (
+    <userContext.Provider value={{ users, setUsers }}>
+      {children}
+    </userContext.Provider>
+  );
+};
+
+export function useUsersContext() {
+  const context = useContext(userContext);
+  if (!context) {
+    throw new Error("useUsersContext debe ser utilizado dentro de un UserProvider");
+  }
+  return context;
+}
+
+
+
+
   
-    useEffect(() => {
-      fetchUsers();
-    }, []);
-  
-    async function fetchUsers() {
-      try {
-        const response = await fetch('/src/assets/Data/users.json');
-        if (!response.ok) {
-          throw new Error('Failed to fetch user data');
-        }
-        const data: Users[] = await response.json();
-        setUsers(data);
-      } catch (error: ) {
-        console.error('Error fetching user data:', error.message);
-      }
-    }
-  
-    return (
-      <UserContext.Provider value={users}>
-        {children}
-      </UserContext.Provider>
-    );
-  };*/
-  
+
+

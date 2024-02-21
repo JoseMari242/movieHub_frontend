@@ -66,23 +66,26 @@ import ProductDetail from '../Pages/Products';
 import { ProductProvider } from '../Context/Products';
 
 
-const AppRouter: React.FC = () => {
+
+const appRouter: React.FC = () => {
     return (
         <BrowserRouter>
             {/* Envuelve las rutas con el proveedor del contexto */}
-            <ProductProvider>
+            
+            <ProductProvider> 
                 <Routes>
                     <Route path='/' element={<Login onLoginSuccess={() => {}} />} />
                     <Route path="/home" element={<Home />} />
                     {/* Agrega una nueva ruta para manejar los detalles del producto */}
-                    <Route path="/product/:id" element={<ProductDetail />} />
+                    <Route path="/:id" element={<ProductDetail />} />
                 </Routes>
               </ProductProvider>
+              
         </BrowserRouter>
     );
 }
 
-export default AppRouter;
+export default appRouter;
 
 
 

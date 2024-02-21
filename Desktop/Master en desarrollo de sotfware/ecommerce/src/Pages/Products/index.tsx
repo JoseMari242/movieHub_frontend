@@ -4,7 +4,6 @@ import { productContext } from '../../Context/Products';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  console.log("ID del producto:", id); 
   const products = useContext(productContext);
 
   // Buscar el producto con el ID especificado en los parámetros de la URL
