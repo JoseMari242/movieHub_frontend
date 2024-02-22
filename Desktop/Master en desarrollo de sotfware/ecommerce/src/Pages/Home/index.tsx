@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Products } from '../../Interfaces/products';
 import { Link } from 'react-router-dom';
 import Header from '../../Components/Header';
+import './home.css'
+
 
 export default function Home() {
   const [productData, setProductData] = useState<Products[]>([]);
@@ -22,12 +24,14 @@ export default function Home() {
 
   return (
     <>
-      <div>
+    <Header/>
+    <h2>WATCHES SEASON 2024</h2>
+      <div className='card-product'>
         {productData.map((product) => {
           
           return (
             
-            <div key={product.id}>
+            <div className='card' key={product.id}>
                <Link to={`/${product.id}`}>
               <h2>{product.Name}</h2></Link>
               <p>{product.description}</p>
@@ -38,6 +42,7 @@ export default function Home() {
           );
         })}
       </div>
+      <button className='button-load-more'>Load more</button>
     </>
   );
 }

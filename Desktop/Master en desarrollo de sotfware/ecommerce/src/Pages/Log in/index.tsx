@@ -105,9 +105,11 @@ function setUsers(users: User[]) {
   throw new Error('Function not implemented.');
 }*/
 
+
 import React, { useEffect, useState } from 'react';
 import './login.css'
 import { useNavigate } from 'react-router-dom';
+import { useUsersContext } from '../../Context/Users';
 
 type User = {
   email: string;
@@ -141,12 +143,17 @@ async function getApi() {
   }
 }*/
 
+/*importamos el customHook 
+const userContext = useUsersContext()*/
+
 
 async function loginUser(email: string, password: string, users: User[], onLoginSuccess: () => void, navigate: any) {
   const user = users.find(user => user.email === email && user.password === password);
   if (user) {
     navigate("/home");
     onLoginSuccess();
+    /* aqui ponemos el context
+    userContext.setUsers(user);*/
   } else {
     alert('Credenciales incorrectas. Inténtalo de nuevo.');
   }
@@ -217,5 +224,4 @@ const Login: React.FC<Props> = ({ onLoginSuccess }) => {
 };
 
 export default Login;
-
 

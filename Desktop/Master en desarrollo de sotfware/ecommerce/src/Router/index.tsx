@@ -58,6 +58,38 @@ const AppRouter: React.FC = () => {
 
 export default AppRouter;*/
 
+/*import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from '../Pages/Log in';
+import Home from '../Pages/Home';
+import ProductDetail from '../Pages/Products';
+import { ProductProvider } from '../Context/Products';
+import { UserProvider } from '../Context/Users';
+
+
+
+const appRouter: React.FC = () => {
+    return (
+        <BrowserRouter>
+            
+            
+            <ProductProvider> 
+                <Routes>
+                
+                    <Route path='/' element={<Login onLoginSuccess={() => {}} />} />
+                    <Route path="/home" element={<Home />} />
+                    
+                    <Route path="/:id" element={<ProductDetail />} />
+                    
+                </Routes>
+              </ProductProvider>
+              
+        </BrowserRouter>
+    );
+}
+
+export default appRouter;*/
+
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from '../Pages/Log in';
@@ -67,25 +99,24 @@ import { ProductProvider } from '../Context/Products';
 
 
 
-const appRouter: React.FC = () => {
+const AppRouter: React.FC = () => {
     return (
         <BrowserRouter>
-            {/* Envuelve las rutas con el proveedor del contexto */}
             
-            <ProductProvider> 
-                <Routes>
-                    <Route path='/' element={<Login onLoginSuccess={() => {}} />} />
-                    <Route path="/home" element={<Home />} />
-                    {/* Agrega una nueva ruta para manejar los detalles del producto */}
-                    <Route path="/:id" element={<ProductDetail />} />
-                </Routes>
-              </ProductProvider>
-              
+                <ProductProvider>
+                    <Routes>
+                        <Route path='/' element={<Login onLoginSuccess={() => {}} />} />
+                        <Route path="/home" element={<Home />} />
+                        <Route path="/:id" element={<ProductDetail />} />
+                    </Routes>
+                </ProductProvider>
+            
         </BrowserRouter>
     );
 }
 
-export default appRouter;
+export default AppRouter;
+
 
 
 

@@ -1,15 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react';
 import "./header.css"
 
-
-
-type Props = {}
-
-export default function Header({}: Props) {
+const Header: React.FC = () => {
+  
 
   return (
-    <div>
-      <h1>Hola,</h1>
+    <div className='Header'>
+      <h1>Home</h1>
     </div>
-  )
-}
+  );
+};
+
+export default Header;
