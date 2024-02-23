@@ -112,8 +112,8 @@ export default function Home() {
             <Link to={`/${product.id}`}>
               <h2>{product.Name}</h2>
             </Link>
-            <p>{product.description}</p>
-            <p>Precio: {product.price}</p>
+            {/*<p>{product.description}</p>
+            <p>Precio: {product.price}</p> */}
             <img src={product.image} alt={product.Name} />
           </div>
         ))}

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { productContext } from '../../Context/Products';
+import './products.css' 
 
 
 const ProductDetail: React.FC = () => {
@@ -17,14 +18,16 @@ console.log(product);
   // Renderizar los detalles del producto
   return (
     <>
-    <div>
+    <div className='card-products'>
       <h2>{product.Name}</h2>
+      <div className='card'>
+      <img src={product.image} alt={product.Name} />
       <p>{product.description}</p>
       <p>Precio: {product.price}</p>
-      <img src={product.image} alt={product.Name} />
+      </div>
     </div>
     <Link to={`/cart`}>
-    <button>Buy!</button></Link>
+    <button className='button-buy'>Buy!</button></Link>
     
     </>
   );

@@ -1,5 +1,5 @@
 html {
-    background-color: #F9C980;
+    background-color: #F5EBEB;
 
 }
 
@@ -23,7 +23,7 @@ html {
 
 /* Estilos para cada tarjeta individual */
 .card {
-    background-color: #ffffff; /* Color de fondo de la tarjeta */
+    background-color:#998787; /* Color de fondo de la tarjeta */
     border-radius: 1rem; /* Bordes redondeados */
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); /* Sombra para resaltar la tarjeta */
     padding: 1rem; /* Espaciado interno */
@@ -49,3 +49,26 @@ img {
     background-color: #FFE5EE;
     margin-left: 5.5rem;
 }
+
+
+/* Estilo para enlaces no visitados */
+a:link {
+    color: white; /* Color antes de clicar */
+    text-decoration: none; /* Para quitar el subrayado */
+  }
+  
+  /* Estilo para enlaces visitados */
+  a:visited {
+    color: red; /* Color después de haber sido visitado */
+  }
+  
+  /* Estilo para enlaces al pasar el mouse por encima */
+  a:hover {
+    color: green; /* Color al pasar el mouse por encima */
+  }
+  
+  /* Estilo para enlaces activos (cuando se está clicando) */
+  a:active {
+    color: yellow; /* Color cuando se está clicando */
+  }
+  
