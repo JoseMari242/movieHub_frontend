@@ -33,6 +33,7 @@ import ProductDetail from '../Pages/Products';
 import { ProductProvider } from '../Context/Products';
 import { AuthProvider } from '../Context/AuthContext';
 import ProtectedRoutes from '../Components/ProtectedRoutes';
+import cart from '../Pages/Cart/cart';
 
 
 
@@ -47,6 +48,7 @@ const AppRouter: React.FC = () => {
                     <Route path='/' element={<Login onLoginSuccess={() => {}} />} />
                         <Route path="/home" element={<ProtectedRoutes component={Home}/>} />
                         <Route path="/:id" element={<ProtectedRoutes component={ProductDetail} />} />
+                        <Route path="/cart" element={<ProtectedRoutes component={cart} />} />
                     </Routes>
                 </ProductProvider>
                 

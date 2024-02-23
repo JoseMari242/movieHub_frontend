@@ -4,6 +4,6 @@ type Props = {}
 
 export default function cart({}: Props) {
   return (
-    <div>cart</div>
+    <div>Este es el carrito, jeje</div>
   )
 }

@@ -37,3 +37,4 @@ export const ProductProvider = ({children}: ProductProviderProps) => {
 
   )
 }
+
