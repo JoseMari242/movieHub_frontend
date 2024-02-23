@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { productContext } from '../../Context/Products';
+import CardProduct from '../../Components/CardProducts';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,12 +16,14 @@ console.log(product);
 
   // Renderizar los detalles del producto
   return (
+    
     <div>
       <h2>{product.Name}</h2>
       <p>{product.description}</p>
       <p>Precio: {product.price}</p>
       <img src={product.image} alt={product.Name} />
     </div>
+    
   );
 };
 

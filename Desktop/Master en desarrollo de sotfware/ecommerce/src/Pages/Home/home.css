@@ -9,6 +9,12 @@ html {
     border-radius: 1rem;
 }
 
+
+.title {
+    text-align: center;
+}
+
+
 .card-product {
     display: flex; /* Usa flexbox para alinear las tarjetas horizontalmente */
     flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias filas si es necesario */
@@ -28,7 +34,7 @@ html {
 
 
 img {
-    width: 10rem;
+    width: 8rem;
     height: 10rem;
     border-radius: 1rem;
 }

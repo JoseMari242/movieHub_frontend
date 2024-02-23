@@ -5,6 +5,8 @@ import Header from '../../Components/Header';
 import './home.css'
 
 
+
+
 export default function Home() {
   const [productData, setProductData] = useState<Products[]>([]);
 
@@ -25,7 +27,9 @@ export default function Home() {
   return (
     <>
     <Header/>
-    <h2>WATCHES SEASON 2024</h2>
+    
+    <h2 className='title'>WATCHES SEASON 2024</h2>
+    
       <div className='card-product'>
         {productData.map((product) => {
           
@@ -34,14 +38,15 @@ export default function Home() {
             <div className='card' key={product.id}>
                <Link to={`/${product.id}`}>
               <h2>{product.Name}</h2></Link>
-              <p>{product.description}</p>
-              <p>Precio: {product.price}</p>
+              {/*<p>{product.description}</p>
+              <p>Precio: {product.price}</p>*/}
               <img src={product.image} alt={product.Name} />
             </div>
             
           );
         })}
       </div>
+     
       <button className='button-load-more'>Load more</button>
     </>
   );
