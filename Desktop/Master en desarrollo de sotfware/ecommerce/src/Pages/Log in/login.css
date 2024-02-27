@@ -21,7 +21,7 @@ h1 {
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 6rem; /* Puedes ajustar el relleno según sea necesario */
+    padding: 6rem;
 }
 
 
@@ -45,6 +45,7 @@ button {
     font-weight: 1000;
     border: none;
     margin-top: 1rem;
+    cursor: pointer;
 
 }
 

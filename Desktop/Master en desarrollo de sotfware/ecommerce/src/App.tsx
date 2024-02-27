@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import Login from './Pages/Log in';
-import Header from './Components/Header';
 import AppRouter from './Router';
 
 
