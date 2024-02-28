@@ -8,7 +8,7 @@ import { CartItem } from '../../Interfaces/cartItem';
 
 
 const CartPage: React.FC = () => {
-  const { cartItems, increaseQuantity, decreaseQuantity, setCartItems } = useCart(); // Obtenemos setCartItems del hook useCart
+  const { cartItems, increaseQuantity, decreaseQuantity, setCartItems } = useCart(); 
 
   const removeItem = (itemToRemove: CartItem ) => {
     const updatedItems = cartItems.filter(item => item !== itemToRemove);
