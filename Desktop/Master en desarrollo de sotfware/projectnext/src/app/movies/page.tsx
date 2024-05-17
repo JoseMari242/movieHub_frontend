@@ -14,7 +14,7 @@ export default async function Movies() {
           {getMovies?.data.map((event: Movie) => (
             <div key={event.id}>
                 <button>
-                    <Link href={String (event.id)}>{event.id}</Link>
+                    <Link href={String (`/movie/${event.id}`)}>{event.id}</Link>
                 </button>
               <h2>{event.name}</h2>
               <img src={event.image} alt={event.name} />
@@ -30,3 +30,8 @@ export default async function Movies() {
     console.log("NO API MOVIES", error);
   }
 }
+
+
+
+
+
