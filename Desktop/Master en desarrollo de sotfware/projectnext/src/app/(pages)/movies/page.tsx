@@ -1,5 +1,6 @@
 import { getData } from "@/utils/API";
 import { Movie } from "@/utils/Interfaces/Movies";
+
 import Link from "next/link";
 
 export default async function Movies() {
@@ -8,14 +9,14 @@ export default async function Movies() {
 
     return (
       <>
-        <h1>Películas</h1>
+        <h1 className="title">Películas</h1>
 
         <div>
           {getMovies?.data.map((event: Movie) => (
             <div key={event.id}>
-                <button>
-                    <Link href={String (`/movie/${event.id}`)}>{event.id}</Link>
-                </button>
+                <p>
+                    <Link href={String (event.id)}>{event.id}</Link>
+                </p>
               <h2>{event.name}</h2>
               <img src={event.image} alt={event.name} />
               <p>Score: {event.score}</p>
