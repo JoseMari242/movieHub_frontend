@@ -3,7 +3,7 @@ export interface Movie {
     name: string,
     image: string,
     score: number,
-    genre: { genre: Genre }[];
+    genre?: { genre: Genre }[];
     sinopsis: string
 }
 

@@ -1,4 +1,5 @@
-import { getData } from "@/utils/API";
+
+import { getData } from "@/utils/Function";
 import { Movie } from "@/utils/Interfaces/Movies";
 import Link from "next/link";
 
@@ -9,7 +10,10 @@ export default async function Movies() {
     return (
       <>
         <h1 className="title">Películas</h1>
-
+        
+        <Link href="/movies/new">
+          <button>New Movie</button>
+        </Link>
         <div>
           {getMovies?.data.map((event: Movie) => {
             return (

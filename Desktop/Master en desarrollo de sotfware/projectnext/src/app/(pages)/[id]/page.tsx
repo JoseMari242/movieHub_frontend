@@ -1,5 +1,6 @@
 
-import { getMovie } from "@/utils/API";
+
+import { getMovie } from "@/utils/Function";
 import { Movie } from "@/utils/Interfaces/Movies";
 import dotenv from 'dotenv';
 

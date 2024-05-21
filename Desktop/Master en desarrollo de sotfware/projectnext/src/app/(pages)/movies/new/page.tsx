@@ -88,3 +88,60 @@ export default function NewMovie() {
     </form>
   );
 }
+
+// src/app/(pages)/new-movie/page.tsx
+// src/app/(pages)/new-movie/page.tsx
+
+// import React, { useState } from 'react';
+// import { useRouter } from 'next/router';
+// import { createMovie } from './action';
+
+// export default function NewMovie() {
+//   const [name, setName] = useState('');
+//   const [image, setImage] = useState('');
+//   const [score, setScore] = useState<number>(0);
+//   const [sinopsis, setSinopsis] = useState('');
+//   const router = useRouter();
+
+//   const handleSubmit = async (e: React.FormEvent) => {
+//     e.preventDefault();
+
+//     const newMovie = {
+//       name,
+//       image,
+//       score,
+//       sinopsis,
+//     };
+
+//     console.log('Submitting movie:', newMovie); // Verificar si los datos del formulario son correctos
+
+//     try {
+//       await createMovie(newMovie);
+//       router.push('/movies');
+//     } catch (error) {
+//       console.error('Error creating movie:', error); // Imprimir el error si ocurre durante la creación de la película
+//     }
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <div>
+//         <label>Name:</label>
+//         <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+//       </div>
+//       <div>
+//         <label>Image URL:</label>
+//         <input type="text" value={image} onChange={(e) => setImage(e.target.value)} required />
+//       </div>
+//       <div>
+//         <label>Score:</label>
+//         <input type="number" value={score} onChange={(e) => setScore(Number(e.target.value))} required />
+//       </div>
+//       <div>
+//         <label>Sinopsis:</label>
+//         <textarea value={sinopsis} onChange={(e) => setSinopsis(e.target.value)} required />
+//       </div>
+//       <button type="submit">Create Movie</button>
+//     </form>
+//   );
+// }
