@@ -34,7 +34,8 @@ export async function getMovie(id: string): Promise<Movie> {
     }
 
     const data = await response.json();
-    return data;
+    console.log(data)
+    return data.data;
   } catch (error) {
     console.error("Error fetching movie:", error);
     throw error;
