@@ -1,9 +1,9 @@
 export interface Movie {
-    id: number,
+    id?: number,
     name: string,
     image: string,
     score: number,
-    genres:  Genre[],
+    genre: { genre: Genre }[];
     sinopsis: string
 }
 

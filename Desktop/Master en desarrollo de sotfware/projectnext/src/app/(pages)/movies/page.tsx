@@ -1,6 +1,5 @@
 import { getData } from "@/utils/API";
 import { Movie } from "@/utils/Interfaces/Movies";
-
 import Link from "next/link";
 
 export default async function Movies() {
@@ -12,18 +11,23 @@ export default async function Movies() {
         <h1 className="title">Películas</h1>
 
         <div>
-          {getMovies?.data.map((event: Movie) => (
-            <div key={event.id}>
+          {getMovies?.data.map((event: Movie) => {
+            return (
+              <div key={event.id}>
                 <p>
-                    <Link href={String (event.id)}>{event.id}</Link>
+                  <Link href={String(event.id)}>{event.id}</Link>
                 </p>
-              <h2>{event.name}</h2>
-              <img src={event.image} alt={event.name} />
-              <p>Score: {event.score}</p>
-              <p>Genre: {event.genre.join(', ')}</p>
-              <p>Sinopsis: {event.sinopsis}</p>
-            </div>
-          ))}
+                <h2>{event.name}</h2>
+                <img src={event.image} alt={event.name} />
+                <p>Score: {event.score}</p>
+                <p>
+                  Genre:{" "}
+                  {event.genre.map((genre) => genre.genre.name).join(", ")}
+                </p>
+                <p>Sinopsis: {event.sinopsis}</p>
+              </div>
+            );
+          })}
         </div>
       </>
     );
@@ -31,7 +35,6 @@ export default async function Movies() {
     console.log("NO API MOVIES", error);
   }
 }
-
 
 
 

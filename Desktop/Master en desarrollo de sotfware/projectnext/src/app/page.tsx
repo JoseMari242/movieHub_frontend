@@ -9,6 +9,9 @@ export default function Page() {
       <Link href="/movies">
         <button className="title-button">movies</button>
       </Link>
+      <Link href="/new">
+          <button>New Movie</button>
+        </Link>
     </>
   );
 }
