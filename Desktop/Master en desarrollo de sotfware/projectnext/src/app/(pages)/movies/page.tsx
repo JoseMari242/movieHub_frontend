@@ -10,6 +10,9 @@ export default async function Movies() {
     return (
       <>
         <h1 className="title">Películas</h1>
+        <Link href="/api/auth/logout">
+        <button className="title-button">Logout</button>
+      </Link>
         
         <Link href="/movies/new">
           <button>New Movie</button>

@@ -15,9 +15,7 @@ console.log(session)
       <Link href="/api/auth/login">
         <button className="title-button">Login</button>
       </Link>
-      <Link href="/api/auth/logout">
-        <button className="title-button">Logout</button>
-      </Link>
+  
       
 
       <Link href="/movies">
